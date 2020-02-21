@@ -8,7 +8,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <memory.h>
+#include <string.h>
 #include <unistd.h>
 #include <fcntl.h>
 #define int long long
@@ -45,7 +45,7 @@ enum { CHAR, INT, PTR };
 // identifier offsets (since we can't create an ident struct)
 enum { Tk, Hash, Name, Class, Type, Val, HClass, HType, HVal, Idsz };
 
-void next()
+void next(void)
 {
   char *pp;
 
@@ -281,7 +281,7 @@ void expr(int lev)
   }
 }
 
-void stmt()
+void stmt(void)
 {
   int *a, *b;
 
@@ -333,7 +333,7 @@ void stmt()
 int main(int argc, char **argv)
 {
   int fd, bt, ty, poolsz, *idmain;
-  int *pc, *sp, *bp, a, cycle; // vm registers
+  int *pc, *sp, *bp, a = 0, cycle; // vm registers
   int i, *t; // temps
 
   --argc; ++argv;
