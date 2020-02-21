@@ -10,11 +10,11 @@ Try the following:
     c4 -s hello.c
     
 	Note: The following commands do not work on the modified c4.c file because
-	the c4 lexer, next(), does not like (void) in function parameter lists while
-	pcc does not like empty parameter lists. C4 also does not like initialized
-	variables and fails if you try to supress the warning about the a var in
-	main being uninitialized. However, if you feed c4 the original c4.c file,
-	the following commands will in fact run:
+	c4 does not like (void) in function parameter lists while pcc does not like
+	empty parameter lists. c4 is in the right here,	it is valid ANSI C. C4 also
+	does not like initialized variables and fails if you try to supress the
+	warning about the a var in main being uninitialized. However, if you feed
+	c4 the original c4.c file, the following commands will run:
 	
     c4 c4.c hello.c
     c4 c4.c c4.c hello.c
